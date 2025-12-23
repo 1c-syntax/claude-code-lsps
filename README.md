@@ -1,6 +1,6 @@
 # Claude Code LSPs
 
-This repository contains a [Claude Code marketplace](https://code.claude.com/docs/en/plugin-marketplaces) with plugins that offer LSP servers for TypeScript, Rust, Python, Go, Java, Kotlin, C/C++, PHP, Ruby, C#, PowerShell, HTML/CSS, and LaTeX.  [LSP servers](https://microsoft.github.io/language-server-protocol) provide powerful and familiar code intelligence features to IDEs, and now Claude Code directly.
+This repository contains a [Claude Code marketplace](https://code.claude.com/docs/en/plugin-marketplaces) with plugins that offer LSP servers for TypeScript, Rust, Python, Go, Java, Kotlin, C/C++, PHP, Ruby, C#, PowerShell, HTML/CSS, LaTeX, and BSL (1C:Enterprise).  [LSP servers](https://microsoft.github.io/language-server-protocol) provide powerful and familiar code intelligence features to IDEs, and now Claude Code directly.
 
 [**Claude Code is going to officially support LSP soon.**](https://www.reddit.com/r/ClaudeAI/comments/1otdfo9/lsp_is_coming_to_claude_code_and_you_can_try_it)  In 2.0.30 (October 31st) they adding the working beginnings of a system to run LSP servers from plugins automatically on startup, and an `LSP` tool (enable via `$ENABLE_LSP_TOOL=1`) that Claude can use to
 - Go to the definition for symbols (`goToDefinition`)
@@ -268,5 +268,28 @@ choco install texlab
 ```
 
 The `texlab` executable needs to be in your PATH. Supports `.tex`, `.bib`, `.cls`, and `.sty` files.
+
+</details>
+
+<details>
+<summary>BSL / 1C:Enterprise (<code>bsl-language-server</code>)</summary>
+
+Install **bsl-language-server**, the Language Server Protocol implementation for BSL (1C:Enterprise) and OneScript:
+
+```bash
+# Download the latest release from GitHub
+# https://github.com/1c-syntax/bsl-language-server/releases
+
+# Extract and add to PATH, or install via package manager:
+
+# macOS with Homebrew
+brew install 1c-syntax/tap/bsl-language-server
+
+# Windows with Scoop
+scoop bucket add 1c-syntax https://github.com/1c-syntax/scoop-bucket.git
+scoop install bsl-language-server
+```
+
+The `bsl-language-server` executable needs to be in your PATH. Supports `.bsl` and `.os` files.
 
 </details>
