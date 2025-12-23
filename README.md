@@ -274,20 +274,32 @@ The `texlab` executable needs to be in your PATH. Supports `.tex`, `.bib`, `.cls
 <details>
 <summary>BSL / 1C:Enterprise (<code>bsl-language-server</code>)</summary>
 
-Install **bsl-language-server**, the Language Server Protocol implementation for BSL (1C:Enterprise) and OneScript:
+Install **bsl-language-server**, the Language Server Protocol implementation for BSL (1C:Enterprise) and OneScript.
+
+Download the native executable for your platform from [GitHub Releases](https://github.com/1c-syntax/bsl-language-server/releases):
+
+| Platform | Download |
+|----------|----------|
+| Windows | `bsl-language-server_win.zip` |
+| macOS | `bsl-language-server_mac.zip` |
+| Linux | `bsl-language-server_nix.zip` |
+
+Extract the archive and add the directory containing `bsl-language-server` executable to your PATH:
 
 ```bash
-# Download the latest release from GitHub
-# https://github.com/1c-syntax/bsl-language-server/releases
+# Linux/macOS example
+unzip bsl-language-server_nix.zip -d ~/bsl-language-server
+export PATH="$HOME/bsl-language-server/bin:$PATH"
 
-# Extract and add to PATH, or install via package manager:
+# Add to your shell profile (~/.bashrc, ~/.zshrc, etc.) to make it permanent
+```
 
-# macOS with Homebrew
-brew install 1c-syntax/tap/bsl-language-server
+```powershell
+# Windows (PowerShell) example
+Expand-Archive bsl-language-server_win.zip -DestinationPath $env:USERPROFILE\bsl-language-server
+$env:PATH += ";$env:USERPROFILE\bsl-language-server\bin"
 
-# Windows with Scoop
-scoop bucket add 1c-syntax https://github.com/1c-syntax/scoop-bucket.git
-scoop install bsl-language-server
+# Add to system PATH via System Properties to make it permanent
 ```
 
 The `bsl-language-server` executable needs to be in your PATH. Supports `.bsl` and `.os` files.
